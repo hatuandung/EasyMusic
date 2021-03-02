@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="adapter"
+            type="com.example.easymusic.ui.base.BaseBindingAdapter&lt;com.example.easymusic.models.Video>" />
+        <variable
+            name="add"
+            type="com.example.easymusic.ui.screen.protect.hidden.video.choosevideo.HiddenVideoListener" />
+    </data>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_alignParentTop="true"
+            android:layout_above="@id/card_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:spanCount="2"
+            app:adapter="@{adapter}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="30dp"
+            android:paddingLeft="30dp"
+            android:layout_alignParentBottom="true">
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thêm"
+                android:onClick="@{v -> add.onAddVideoClicked()}"
+                android:textColor="#000"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

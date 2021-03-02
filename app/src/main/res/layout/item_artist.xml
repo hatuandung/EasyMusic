@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="song"
+            type="com.example.easymusic.models.Song" />
+
+        <variable
+            name="item"
+            type="com.example.easymusic.models.Artist" />
+        
+        <variable
+            name="listener"
+            type="com.example.easymusic.ui.screen.music.artist.ArtistListener&lt;com.example.easymusic.models.Artist>" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal"
+        android:onClick="@{v -> listener.onArtistItemListener(item)}"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/img_song"
+            thumb="@{song.albumId}"
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+
+        <LinearLayout
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/img_song"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.artist}"
+                android:textColor="#000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.numberOfSong + ` Song`}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.numberOfAlbum + ` Album`}" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

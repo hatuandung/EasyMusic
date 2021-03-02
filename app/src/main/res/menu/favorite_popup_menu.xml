@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/favorite_detail"
+        android:title="Chi tiết" />
+    <item
+        android:id="@+id/favorite_share"
+        android:title="Chia sẻ" />
+    <item
+        android:id="@+id/favorite_delete"
+        android:title="Xóa khỏi yêu thích" />
+
+</menu>

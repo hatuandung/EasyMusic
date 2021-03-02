@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/unhide"
+        android:title="Bỏ ẩn" />
+    <item
+        android:id="@+id/hidden_detail"
+        android:title="Chi tiết" />
+    <item
+        android:id="@+id/delete"
+        android:title="Xóa vĩnh viễn" />
+</menu>

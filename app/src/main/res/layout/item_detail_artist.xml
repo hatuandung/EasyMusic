@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="item"
+            type="com.example.easymusic.models.Song" />
+
+        <variable
+            name="listener"
+            type="com.example.easymusic.ui.screen.MediaListener&lt;com.example.easymusic.models.Song>"/>
+    </data>
+
+    <LinearLayout
+        android:onClick="@{v -> listener.onItemMediaClicked(item)}"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@{item.artist}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Artist"/>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                thumb="@{item.albumId}"
+                android:layout_width="40dp"
+                android:layout_height="40dp">
+            </ImageView>
+            <TextView
+                android:text="@{item.title}"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                tools:text="Name of song"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
